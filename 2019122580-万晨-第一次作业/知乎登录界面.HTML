@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=dic, initial-scale=1.0">
+    <title>知乎登录</title>
+    <style>
+        #content
+        {
+            width: 350px;
+            height: 312px;
+            background-color: white;
+            margin: auto;
+            position: relative;
+        }
+       
+        #content-loginselect > span {
+            height: 18px;
+            padding: 0px 24px;
+            display: inline-block;
+        }
+        #content-loginselect > span:first-child {
+            margin-right: 20px;
+        }
+
+        .login {
+            padding: 0px 0px 18px 0px !important;
+            font-weight: 700;
+            border-bottom: #0084FF solid;
+        }
+        #content-loginform input:not([type=submit])
+        {
+            width: 100%;
+            height: 42px;
+            border: none;
+            border-bottom: 1px black solid;
+            outline: none;
+            margin: 7px 0px;
+            font-size: 14px;
+        }
+        #content-loginform >a:last-of-type
+        {
+            float: right;
+            color: cadetblue;
+        }
+        #content-loginsumbit input[type=submit]
+        {
+            width: 100%;
+            height: 36px;
+            border: none;
+            background-color:blue;
+            color: white;
+            margin-top: 30px;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+        #content-social
+        {
+            width: 350px;
+            height: 60px;
+            border-radius: 3px;
+            background-color: #fff;
+            margin: auto;
+            margin-top: 24px;
+            color: #8A95AA;
+            text-decoration: none;
+            border-bottom:1px burlywood solid;
+        }
+        #social-login
+        {
+            width: 350px;
+            height: 16px;
+            border-radius: 3px;
+            background-color: #fff;
+            padding: 22px 24px;
+            margin: auto;
+            margin-top: 24px;
+            color: #8A95AA;
+            text-decoration: none;
+        }
+        #social-login a{
+            display: inline-block;
+            margin: 0px 6px;
+            color: #8A95AA;
+        }
+        #social-login >span
+        {
+            float: left;
+        }
+        #social-login > div
+        {
+            float: right;
+        }
+        #last
+        {
+            width: 350px;
+            height: 16px;
+            border-radius: 3px;
+            background-color: #8A95AA;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="content-login-select">
+            <span>免密码登录</span>
+            <span class="login">密码登录</span>
+        </div>
+        <div id="content-loginform">
+            <form action="#" method="post">
+                <input type="text" name="userName" placeholder="手机号或邮箱">
+            </form>
+        </div>
+        <div id="content-loginform">
+            <input type="password" name="password" placeholder="密码">
+        </div>
+        <div id="content-loginform">
+            <a href="#">海外手机号登录</a>
+            <a href="#">忘记密码</a>
+        </div>
+        <div id="content-loginsumbit">
+            <input type="submit" value="登录">
+        </div>
+        <div id="content-social">
+        未注册手机未注册手机验证后自动登录，注册即代表同意《知乎协议》《隐私保护指引》
+        </div>
+        <div id="social-login">
+            <span>社交账号登录</span>
+            <div>
+                <a href="#">
+                    <img src="微信.png" alt="">
+                    <span>微信</span>
+                </a>
+                <a href="#">
+                    <img src="qq.png" alt="">
+                    <span>QQ</span>
+                </a>
+                <a href="#">
+                    <img src="微博.png" alt="">
+                    <span>微博</span>
+                </a>
+            </div>
+        </div>
+        <div id="content-loginform">
+            <a href="#">
+            <img src="√.png" alt="">
+
+            <span>开通机构号</span>
+            </a>
+            
+            
+            <a href="#">
+                <img src="知乎.png" alt="">
+                <span>下载知乎app</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
