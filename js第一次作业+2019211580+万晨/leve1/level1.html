@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[1,2,3,3,4,'a','a','b','c'];
+
+        function reduce(arr){
+            var res=[];
+            var decide=1;
+                for(var i=0;i<arr.length;i++)
+                {
+                    if(res.length==0)
+                    {
+                        res.push(arr[i]);
+                    }
+                     else
+                    {
+                        for(var j=0;j<res.length;j++)
+                        {
+                            if(arr[i]==res[j])
+                            {
+                                decide=0;
+                            }
+                        }
+                        if(decide==1)
+                        {
+                            res.push(arr[i]);
+                        }
+                        decide=1;
+                    }
+                }
+             return res;
+        }
+
+        console.log(reduce(arr));  //[1, 2, 3, 4, "a", "b", "c"]
+    </script>
+    <script>
+      var arr=[1,5,4,8,2,6,3,9,7];
+
+    function mySort(arr){
+    var temp=0;
+    for(var i=0;i<arr.length-1;i++)
+    {
+        for(var j=0;j<arr.length-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(mySort(arr));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
