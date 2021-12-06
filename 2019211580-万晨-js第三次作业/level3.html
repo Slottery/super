@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .wrap {
+    width: 400px;
+    margin: 30px auto;
+    }
+    textarea {
+    display: block;
+    width: 100%;
+    height: 60px;
+    }
+    input {
+    display: block;
+    width: 60%;
+    margin: 15px auto;
+    }
+    li {
+    padding: 5px 10px;
+    position: relative;
+    word-break: break-all;
+    }
+    .red {
+    color: #000;
+    background: #f1f1f1;
+    } 
+    .pink {
+    color: #000;
+    background: #ccc;
+    }
+    a {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    background: yellow;
+    color: #fff;
+    } 
+    #list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: 14px/26px "宋体";
+    }
+    .clos {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    color: #fff;
+    background: #000;
+    padding: 5px 0;
+    text-decoration: none;
+    text-align: center;
+    }
+    .clos:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,.5)
+    }
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+    var btn = document.querySelector('input');
+    var text = document.querySelector('textarea');
+    var list = document.querySelector('#list');
+    var colors = ["red","pink"];
+    var nub = 0;
+    btn.onclick = function(){
+    if(text.value.trim() == "")
+    {
+        alert("打点字吧");
+        return false;
+    }
+    var li = document.createElement("li");
+    li.innerHTML = text.value;
+    if(list.children[0]&&list.children[0].className=="red")
+    {
+        li.className = "pink";
+    } 
+    else {
+        li.className = "red";
+    }
+    var a = null;
+    li.onmouseover = function(){
+    if(a) 
+    {
+        a.style.display = "block";
+    } 
+    else {
+        a = document.createElement("a");
+        a.href = "javascript:;";
+        a.className = "clos";
+        a.innerHTML = "删除";
+        a.onclick = function (){
+        list.removeChild(this.parentNode);
+        
+        };
+        this.appendChild(a);
+    }
+    };
+    li.onmouseout = function(){
+    a.style.display = "none";
+    };
+    list.insertBefore(li,list.children[0]);
+    text.value = "";
+    nub++;
+    };
+    }; 
+    </script>
+    </head>
+    <body>
+    <div>
+    <div class="wrap">
+    <textarea id="text"></textarea>
+    <input type="button" value="创建元素">
+    <ul id="list"></ul>
+    </div> 
+    </body>
+
+</script>
+</html>

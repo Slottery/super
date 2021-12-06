@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" id="window">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #id
+      {
+        background: aliceblue;
+      }
+      #changecolor
+      {
+        font-size: 20px;
+      }
+      #changecolor
+      {
+        font-size: 20px;
+      }
+      
+    </style>
+</head>
+<body>
+    
+    <button id="changecolor">颜色</button><br>
+    <button id="changesize">改变字体大小</button>
+</body>
+<script>
+    var changecolor=document.getElementById("changecolor");
+    changecolor.onclick =function()
+    {
+      document.getElementById("window").style.background='blue';
+    }
+    let changesize =document.getElementById("changesize");
+    var one=0;
+    changesize.onclick=function()
+    {
+    
+      if(one==0)
+      {
+        document.getElementById("changecolor").style.fontSize='20px';
+        document.getElementById("changesize").style.fontSize='20px';
+        changesize.innerHTML='20px';
+        console.log(one);
+       
+      }
+      if(one==1)
+      {
+        document.getElementById("changecolor").style.fontSize='30px';
+        document.getElementById("changesize").style.fontSize='30px';
+        changesize.innerHTML='30px';
+        console.log(one);
+        
+      }
+      if(one==2)
+      {
+        document.getElementById("changecolor").style.fontSize='40px';
+        document.getElementById("changesize").style.fontSize='40px';
+        changesize.innerHTML='40px';
+        console.log(one);
+        one++;
+      }
+      if(one==3)
+      {
+        document.getElementById("changecolor").style.fontSize='50px';
+        document.getElementById("changesize").style.fontSize='50px';
+        changesize.innerHTML='50px';
+        one=-1;
+      }
+       
+      one++;  
+       
+    }
+   
+</script>
+</html>
