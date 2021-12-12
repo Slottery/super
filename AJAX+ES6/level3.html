@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='leve3.js'></script>
+    <style>
+    .wrap {
+        width: 400px;
+        margin: 30px auto;
+    }
+    </style>
+    <script src="level2.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <input type="text" id="input">
+        <button id="serch">搜索</button>
+        <ul id="list"></ul>
+    </div>
+   
+    <script>
+        const serch=document.getElementsByTagName('button')[0];
+        const input=document.getElementsByTagName('input')[0];
+        const list = document.querySelector('#list');
+        
+      
+        serch.onclick=function()
+        {
+            let da=new a({
+                type:"get",
+                url:"https://autumnfish.cn//search?keywords= ",
+                data:input.value,
+                async:true,
+            })
+            da.type=(String)(da.type);
+            ajax(da);
+        }
+    </script>
+    
+</body>
+</html>
