@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>历史的“今天”</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 100vw/750 *40;
+            background-color: #eff0f4;
+        }
+        .top
+        {
+            display: flex;
+            width: 690/40rem;
+            margin: 0 auto;
+            height: 175/40rem;
+            background-color: rgb(76, 212, 133);
+            justify-content: space-between;
+            align-items: center;
+
+    
+        }
+        .today{
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .p
+        {
+            font-size: 20px;
+        }
+        .logo>a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        li
+        {
+            margin-top: 1.5rem;
+        }
+        li a
+        {
+            text-decoration: none;
+            color: cornflowerblue;
+        }
+    </style>
+    <script>
+        function year(str)
+        {
+            let arr=str.split("年");
+            return arr[0];
+        }
+        window.onload =function()
+        {
+        const list=document.getElementsByTagName("ul")[0];
+        const p=document.getElementsByTagName("p")[0];
+        console.log(name);
+        const xhr = new XMLHttpRequest()
+        xhr.open("get", "https://api.oick.cn/lishi/api.php")
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                    const res = JSON.parse(xhr.responseText)
+                    console.log(res)
+                    console.log("请求成功")
+                    let arr=res.day.split("/ ");
+                    p.innerHTML=arr[0]+"月"+arr[1]+"日";
+                for(let i=res.result.length-1;i>0;i--)
+                {
+                    const li=document.createElement("li");
+                    const yea=document.createElement("a");
+                    const content=document.createElement("a");
+                    yea.innerHTML=year(year(res.result[i].date))+"年 ";
+                    content.innerHTML=res.result[i].title;
+                    li.insertBefore(yea,li.children[0]);
+                    li.insertBefore(content,li.children[1]);
+                    list.insertBefore(li,list.children[0]);
+                }
+                } else {
+                console.log("请求失败")
+                }
+            }   
+            }
+            xhr.send()
+        }
+    </script>
+</head>
+<body>
+    <header class="top">
+        <div class="home">
+          <img src="home.png" alt="">
+        </div>
+        <h1 class="logo">
+            <a href="#">
+                历史上的今天
+            </a>
+        </h1>
+        <div class="button">
+            <img src="单列列表.png" alt="">
+        </div>
+    </header>
+   <div>
+    <div class="today">
+        <img src="向左箭头.png" alt="">
+        <p class="p"></p>
+        <img src="向右箭头.png" alt="">
+    </div>
+   </div>
+   <div>
+       <ul id="list"></ul>
+   </div>
+</body>
+</html>
