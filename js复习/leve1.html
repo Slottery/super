@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day."
+        const reg1 = /�+\?([a-z])/ig
+        const reg2 = /[^a-z']+/ig
+        str = str.replace(reg1, (a, g1) => {
+            return ' ' + g1.toUpperCase()
+        }).replace(reg2, ' ')
+        console.log(str) // 'I'm going to take a trip to Daocheng on May Day.'
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
